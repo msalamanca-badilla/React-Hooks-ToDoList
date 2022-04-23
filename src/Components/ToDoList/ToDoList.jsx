@@ -18,14 +18,13 @@ export default function TodoList(){
 
     return(
         <div className = 'ToDoList'>
-            
                 <div>{toDoInput}</div>
                 <br />
             <form onSubmit={addToDo}>
                 <input 
-                type="text" 
-                value={toDoInput}
-                onChange={handleChange}
+                    type="text" 
+                    value={toDoInput}
+                    onChange={handleChange}
                 />
                 <button onSubmit={addToDo}>Add To Do</button>
                 {/* <button>Remove To Do</button> */}
