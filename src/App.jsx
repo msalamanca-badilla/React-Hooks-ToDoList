@@ -5,7 +5,7 @@ import React, {useState} from 'react';
 
 function App() {
   const [toDoItems, setToDoItems] = useState(
-    [{todo: null}]
+    [{todo: 'mow lawn'}]
   )
 
   const addToDo = todo => {

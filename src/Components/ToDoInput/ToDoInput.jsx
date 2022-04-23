@@ -22,7 +22,6 @@ export default function TodoList({addToDo}){
                     onChange={handleChange}
                 />
                 <button onSubmit={handleSubmit}>Add To Do</button>
-                {/* <button>Remove To Do</button> */}
             </form>
         </div>
     )
