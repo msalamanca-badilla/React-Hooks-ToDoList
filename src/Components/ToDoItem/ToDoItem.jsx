@@ -1,9 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 
 export default function toDoItem({item,index}){
     return(
         <div className='toDoItem'>
-            <li>{item.todo}</li>
+            <div>{item.todo}</div>
         </div>
     )
 }

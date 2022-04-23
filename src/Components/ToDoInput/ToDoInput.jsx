@@ -15,7 +15,7 @@ export default function TodoList({addToDo}){
 
     return(
         <div className = 'ToDoList'>
-            <form onSubmit={(evt)=>handleSubmit(evt)}>
+            <form onSubmit={handleSubmit}>
                 <input 
                     type="text" 
                     value={toDoInput}

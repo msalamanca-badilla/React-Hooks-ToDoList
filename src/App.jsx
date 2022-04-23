@@ -5,7 +5,7 @@ import React, {useState} from 'react';
 
 function App() {
   const [toDoItems, setToDoItems] = useState(
-    [{todo: 'mow lawn'}]
+    [{todo: null}]
   )
 
   const addToDo = todo => {
@@ -16,7 +16,8 @@ function App() {
   return (
     <div className="App">
       <h1>React Hooks To Do List</h1>
-      {toDoItems.map((item,index)=>(<ToDoItem key = {index} index={index} item={item}/>
+      {toDoItems.map((item,index)=>(
+        <ToDoItem key = {index} index={index} item={item}/>
       ))}
       <TodoInput addToDo={addToDo} />
     </div>
