@@ -1,27 +1,27 @@
 import React, { useState } from "react";
 
-export default function TodoList(){
+export default function TodoList({addToDo}){
     const [toDoInput, setToDoInput]= useState('')
 
     const handleChange = evt => {
         setToDoInput(evt.target.value)
     }
-    const addToDo = evt => {
+
+    const handleSubmit = evt => {
         evt.preventDefault()
-        setToDoInput({
-            toDoInput:' '
-        })
+        addToDo(toDoInput)
+        setToDoInput('')
     }
 
     return(
         <div className = 'ToDoList'>
-            <form onSubmit={(evt)=>addToDo(evt)}>
+            <form onSubmit={(evt)=>handleSubmit(evt)}>
                 <input 
                     type="text" 
                     value={toDoInput}
                     onChange={handleChange}
                 />
-                <button onSubmit={addToDo}>Add To Do</button>
+                <button onSubmit={handleSubmit}>Add To Do</button>
                 {/* <button>Remove To Do</button> */}
             </form>
         </div>
