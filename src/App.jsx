@@ -8,12 +8,17 @@ function App() {
     [{todo: 'mow lawn'}]
   )
 
+  const addToDo = todo => {
+    const newToDo=[...toDoItems,{todo}]
+    setToDoItems(newToDo)
+  }
+
   return (
     <div className="App">
       <h1>React Hooks To Do List</h1>
-      <TodoInput />
-        {toDoItems.map((item,index)=>(<ToDoItem key = {index} index={index} item={item}/>
-        ))}
+      {toDoItems.map((item,index)=>(<ToDoItem key = {index} index={index} item={item}/>
+      ))}
+      <TodoInput addToDo={addToDo} />
     </div>
   );
 }
