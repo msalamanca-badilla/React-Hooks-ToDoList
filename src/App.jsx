@@ -13,11 +13,17 @@ function App() {
     setToDoItems(newToDo)
   }
 
+  const removeToDo = index => {
+    const newToDo=[...toDoItems]
+    newToDo.splice(index,1)
+    setToDoItems(newToDo)
+  }
+
   return (
     <div className="App">
       <h1>React Hooks To Do List</h1>
       {toDoItems.map((item,index)=>(
-        <ToDoItem key = {index} index={index} item={item}/>
+        <ToDoItem key = {index} index={index} item={item} removeToDo={removeToDo}/>
       ))}
       <TodoInput addToDo={addToDo} />
     </div>
