@@ -3,7 +3,7 @@ import TodoInput from './Components/ToDoInput/ToDoInput';
 import ToDoItem from './Components/ToDoItem/ToDoItem';
 import React, {useState} from 'react';
 
-function App() {
+export default function App() {
   const [toDoItems, setToDoItems] = useState(
     [{todo: 'mow lawn'}]
   )
@@ -22,12 +22,10 @@ function App() {
   return (
     <div className="App">
       <h1>React Hooks To Do List</h1>
-      {toDoItems.map((item,index)=>(
-        <ToDoItem key = {index} index={index} item={item} removeToDo={removeToDo}/>
+      {toDoItems.map((toDoItem,index)=>(
+        <ToDoItem key = {index} index={index} toDoItem={toDoItem} removeToDo={removeToDo}/>
       ))}
       <TodoInput addToDo={addToDo} />
     </div>
   );
 }
-
-export default App;

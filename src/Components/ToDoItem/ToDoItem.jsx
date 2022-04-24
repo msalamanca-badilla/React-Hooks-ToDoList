@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function toDoItem({item,index, removeToDo}){
+export default function toDoItem({toDoItem,index, removeToDo}){
 
     return(
         <div className='toDoItem'>
-            <div>{item.todo}<button onClick={() => removeToDo(index)}>Remove To Do</button></div>
+            <div>{toDoItem.todo}<button onClick={() => removeToDo(index)}>Remove To Do</button></div>
         </div>
     )
 }
