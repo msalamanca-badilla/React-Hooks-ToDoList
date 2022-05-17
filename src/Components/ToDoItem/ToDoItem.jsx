@@ -4,7 +4,11 @@ export default function toDoItem({toDoItem,index, removeToDo}){
 
     return(
         <div className='toDoItem'>
-            <div>{toDoItem.todo}<button onClick={() => removeToDo(index)}>Remove To Do</button></div>
+            {toDoItem.todo < 1?(
+                <div></div>    
+            ):(
+                <div>{toDoItem.todo}<button onClick={() => removeToDo(index)}>Remove To Do</button></div>
+            )}
         </div>
     )
 }
